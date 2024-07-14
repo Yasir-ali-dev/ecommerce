@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const { productCategorySchema } = require("./ProductCategory");
 const productSchema = mongoose.Schema(
   {
     name: {
@@ -22,6 +22,7 @@ const productSchema = mongoose.Schema(
       required: [true, "product barcode is requied"],
       lowercase: true,
     },
+    category: productCategorySchema,
   },
   { timestamps: true }
 );
