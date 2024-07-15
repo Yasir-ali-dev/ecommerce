@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { productCategorySchema } = require("./ProductCategory");
+const { productInventorySchema } = require("./ProductInventroy");
 const productSchema = mongoose.Schema(
   {
     name: {
@@ -23,6 +24,7 @@ const productSchema = mongoose.Schema(
       lowercase: true,
     },
     category: productCategorySchema,
+    inventory: productInventorySchema,
   },
   { timestamps: true }
 );

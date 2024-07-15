@@ -9,14 +9,16 @@ const productCategorySchema = mongoose.Schema(
     },
     description: {
       type: String,
-      minLength: [5, "minimum should be 10 or more char"],
+      minLength: [5, "description should be 10 or more characters"],
       default: "Others",
     },
   },
   { timestamps: true }
 );
+
 const ProductCategory = mongoose.model(
   "product_category",
   productCategorySchema
 );
+
 module.exports = { ProductCategory, productCategorySchema };
