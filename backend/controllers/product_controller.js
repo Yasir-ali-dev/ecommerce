@@ -14,7 +14,6 @@ const createProduct = async (req, res, next) => {
       "name, price, barcode, category and quantity are required fields"
     );
   }
-
   const productCategory = await ProductCategory.findOne({ name: category });
   if (!productCategory) {
     throw new NotFoundError(`Category '${categoryName}' not found.`);
