@@ -7,6 +7,8 @@ const productRouter = require("./routes/product_route");
 const userDetailsRouter = require("./routes/user_details_route");
 const userAuthRouter = require("./routes/user_route");
 const errorHandler = require("./middlewares/GlobalErrorHandler");
+const orderItemsRouter = require("./routes/order_items_routes");
+
 const app = express();
 
 // --middlewares
@@ -15,7 +17,7 @@ app.use("/api/v1/products", productRouter);
 app.use("/api/v1/categories", productCategoryRouter);
 app.use("/api/v1/userdetails", userDetailsRouter);
 app.use("/api/v1/auth", userAuthRouter);
-
+app.use("/api/v1/orderitems", orderItemsRouter);
 // --global error handler
 app.use(errorHandler);
 
