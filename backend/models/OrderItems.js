@@ -11,6 +11,11 @@ const orderItemsSchema = mongoose.Schema(
       type: Number,
       required: [true, "total field is requied"],
     },
+    product: {
+      type: mongoose.Types.ObjectId,
+      ref: "Product",
+      required: true,
+    },
   },
   { timestamps: true }
 );
